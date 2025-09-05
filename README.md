@@ -34,8 +34,8 @@ O **t031a5 Middleware** é uma solução abrangente desenvolvida em Python para 
 
 ```bash
 # Clone o repositório
-git clone https://github.com/roberto/t031a5-middleware.git
-cd t031a5-middleware
+git clone https://github.com/rraires/T031a5_middleware_alpha1.git
+cd T031a5_middleware_alpha1
 
 # Instale as dependências
 pip install -r requirements.txt
