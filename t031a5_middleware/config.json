@@ -1,0 +1,167 @@
+{
+  "system": {
+    "name": "t031a5_middleware",
+    "version": "1.0.0",
+    "debug": false,
+    "log_level": "INFO",
+    "environment": "development"
+  },
+  "api": {
+    "host": "0.0.0.0",
+    "port": 8000,
+    "websocket_port": 8001,
+    "cors_enabled": true,
+    "cors_origins": ["*"],
+    "rate_limiting": {
+      "enabled": true,
+      "requests_per_minute": 100
+    },
+    "authentication": {
+      "enabled": false,
+      "jwt_secret": "your-secret-key-here",
+      "token_expiry": 3600
+    }
+  },
+  "modules": {
+    "audio": {
+      "enabled": true,
+      "sample_rate": 44100,
+      "channels": 2,
+      "buffer_size": 1024,
+      "input_device": null,
+      "output_device": null,
+      "tts": {
+        "engine": "pyttsx3",
+        "voice": null,
+        "rate": 200,
+        "volume": 0.8
+      },
+      "asr": {
+        "engine": "speech_recognition",
+        "language": "en-US",
+        "timeout": 5
+      }
+    },
+    "motion": {
+      "enabled": true,
+      "simulation_mode": true,
+      "robot_type": "unitree_go1",
+      "control_frequency": 100,
+      "safety_limits": {
+        "max_velocity": 2.0,
+        "max_angular_velocity": 1.0,
+        "max_acceleration": 5.0
+      },
+      "high_level": {
+        "enabled": true,
+        "default_gait": "trot",
+        "step_height": 0.08
+      },
+      "low_level": {
+        "enabled": false,
+        "joint_limits_check": true
+      }
+    },
+    "led": {
+      "enabled": true,
+      "num_leds": 64,
+      "brightness": 128,
+      "default_pattern": "idle",
+      "update_frequency": 30,
+      "hardware_interface": "simulation"
+    },
+    "video": {
+      "enabled": true,
+      "camera_index": 0,
+      "resolution": [640, 480],
+      "fps": 30,
+      "format": "MJPG",
+      "streaming": {
+        "enabled": true,
+        "port": 8080,
+        "quality": 80
+      },
+      "recording": {
+        "enabled": false,
+        "output_dir": "./data/recordings",
+        "max_duration": 300
+      }
+    },
+    "sensor_fusion": {
+      "enabled": true,
+      "update_rate": 50,
+      "imu_enabled": true,
+      "lidar_enabled": false,
+      "camera_enabled": true,
+      "filters": {
+        "kalman_enabled": true,
+        "complementary_enabled": true,
+        "madgwick_enabled": false
+      }
+    }
+  },
+  "logging": {
+    "level": "INFO",
+    "file_enabled": true,
+    "console_enabled": true,
+    "max_file_size": "10MB",
+    "backup_count": 5,
+    "log_dir": "./logs",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    "date_format": "%Y-%m-%d %H:%M:%S"
+  },
+  "metrics": {
+    "enabled": true,
+    "collection_interval": 10,
+    "export_prometheus": true,
+    "prometheus_port": 9090,
+    "retention_days": 7,
+    "system_metrics": {
+      "cpu_enabled": true,
+      "memory_enabled": true,
+      "disk_enabled": true,
+      "network_enabled": true
+    }
+  },
+  "health_check": {
+    "enabled": true,
+    "check_interval": 30,
+    "timeout": 5,
+    "checks": {
+      "database": false,
+      "modules": true,
+      "system_resources": true,
+      "network": true
+    },
+    "thresholds": {
+      "cpu_usage": 80,
+      "memory_usage": 85,
+      "disk_usage": 90
+    }
+  },
+  "database": {
+    "enabled": false,
+    "type": "sqlite",
+    "host": "localhost",
+    "port": 5432,
+    "name": "middleware_db",
+    "user": "middleware",
+    "password": "password",
+    "pool_size": 10,
+    "max_overflow": 20
+  },
+  "security": {
+    "ssl_enabled": false,
+    "ssl_cert_path": "",
+    "ssl_key_path": "",
+    "api_key_required": false,
+    "allowed_ips": [],
+    "blocked_ips": []
+  },
+  "performance": {
+    "max_concurrent_tasks": 100,
+    "task_timeout": 30,
+    "memory_limit_mb": 1024,
+    "cpu_limit_percent": 80
+  }
+}

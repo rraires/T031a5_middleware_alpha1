@@ -1,0 +1,42 @@
+[
+  {
+    "camera_id": 0,
+    "width": 640,
+    "height": 480,
+    "fps": 30.0,
+    "brightness": 0.0,
+    "contrast": 16.0,
+    "saturation": 64.0,
+    "backend": "MSMF"
+  },
+  {
+    "camera_id": 1,
+    "width": 640,
+    "height": 480,
+    "fps": 29.97002997002997,
+    "brightness": -1.0,
+    "contrast": -1.0,
+    "saturation": -1.0,
+    "backend": "MSMF"
+  },
+  {
+    "camera_id": 2,
+    "width": 640,
+    "height": 480,
+    "fps": 0.0,
+    "brightness": -1.0,
+    "contrast": -1.0,
+    "saturation": -1.0,
+    "backend": "DSHOW"
+  },
+  {
+    "camera_id": 3,
+    "width": 640,
+    "height": 480,
+    "fps": 0.0,
+    "brightness": -1.0,
+    "contrast": -1.0,
+    "saturation": -1.0,
+    "backend": "DSHOW"
+  }
+]

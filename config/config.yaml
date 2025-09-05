@@ -1,0 +1,102 @@
+# Configuração Principal do Middleware t031a5
+# Sistema de Orquestração para Robô Unitree G1
+
+general:
+  name: "t031a5_middleware"
+  version: "1.0.0"
+  description: "Middleware de Orquestração para Robótica Humanoide G1"
+  debug: true
+  log_level: "INFO"
+
+# Configurações de Rede
+network:
+  interface: "enp2s0"  # Interface de rede padrão
+  robot_ip: "192.168.123.15"  # IP do robô G1
+  middleware_port: 8080
+  websocket_port: 8081
+  streaming_port: 8082
+
+# Configurações de Áudio
+audio:
+  sample_rate: 16000
+  channels: 1
+  chunk_size: 1024
+  format: "int16"
+  tts:
+    default_voice: 0
+    volume: 80
+    speed: 1.0
+  asr:
+    language: "pt-BR"
+    timeout: 5.0
+    energy_threshold: 300
+
+# Configurações de Vídeo
+video:
+  resolution:
+    width: 640
+    height: 480
+  fps: 30
+  codec: "h264"
+  quality: 80
+  streaming:
+    protocol: "webrtc"
+    bitrate: 1000000
+
+# Configurações de Movimento
+motion:
+  safety:
+    emergency_stop: true
+    max_velocity: 1.0
+    timeout: 2.0
+  interpolation:
+    smooth_factor: 0.8
+    transition_time: 1.0
+  gestures:
+    library_path: "./data/gestures/"
+
+# Configurações de LEDs
+leds:
+  brightness: 80
+  transition_speed: 0.5
+  patterns:
+    idle: "breathing"
+    listening: "pulse_blue"
+    speaking: "wave_green"
+    error: "flash_red"
+
+# Configurações de Sensores
+sensors:
+  fusion:
+    update_rate: 100  # Hz
+    filter_type: "kalman"
+  imu:
+    calibration: true
+    noise_threshold: 0.1
+
+# Configurações de IA/LLM
+ai:
+  provider: "openai"
+  model: "gpt-4-turbo"
+  real_time_api: true
+  max_tokens: 150
+  temperature: 0.7
+  personality:
+    style: "friendly"
+    energy_level: "medium"
+    responsiveness: "high"
+
+# Configurações de Logging
+logging:
+  level: "INFO"
+  file: "./logs/t031a5.log"
+  max_size: "10MB"
+  backup_count: 5
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# Configurações de Performance
+performance:
+  max_threads: 8
+  queue_size: 1000
+  timeout: 30.0
+  memory_limit: "1GB"

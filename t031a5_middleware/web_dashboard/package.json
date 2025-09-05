@@ -1,0 +1,85 @@
+{
+  "name": "unitree-g1-dashboard",
+  "version": "1.0.0",
+  "description": "Web Dashboard for Unitree G1 Robot Control and Monitoring",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "vite preview --port 3000",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "unitree",
+    "robot",
+    "dashboard",
+    "control",
+    "monitoring",
+    "react",
+    "typescript"
+  ],
+  "author": "Unitree G1 Team",
+  "license": "MIT",
+  "dependencies": {
+    "@hookform/resolvers": "^2.9.0",
+    "@react-three/drei": "^9.56.0",
+    "@react-three/fiber": "^8.11.0",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tanstack/react-query": "^4.24.0",
+    "axios": "^1.3.0",
+    "clsx": "^1.2.0",
+    "date-fns": "^2.29.0",
+    "framer-motion": "^9.0.0",
+    "lucide-react": "^0.312.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.43.0",
+    "react-hot-toast": "^2.4.0",
+    "react-router-dom": "^6.8.0",
+    "react-use": "^17.4.0",
+    "react-virtualized-auto-sizer": "^1.0.0",
+    "react-window": "^1.8.0",
+    "recharts": "^2.5.0",
+    "socket.io-client": "^4.6.0",
+    "sonner": "^2.0.7",
+    "tailwind-merge": "^1.10.0",
+    "three": "^0.149.0",
+    "zod": "^3.20.0",
+    "zustand": "^4.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@types/react-window": "^1.8.0",
+    "@types/three": "^0.149.0",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
+    "@vitejs/plugin-react": "^3.1.0",
+    "autoprefixer": "^10.4.13",
+    "eslint": "^8.34.0",
+    "eslint-plugin-react": "^7.32.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.3.4",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.0",
+    "typescript": "^4.9.0",
+    "vite": "^4.1.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
